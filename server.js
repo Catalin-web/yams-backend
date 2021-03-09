@@ -26,6 +26,7 @@ app.use(
 		exposedHeaders: ['token', 'room'],
 	}),
 );
+// origin: 'http://localhost:3000',
 app.use(express.json());
 app.enable('trust proxy');
 app.use(cookieParser());
