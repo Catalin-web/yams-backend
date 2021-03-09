@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node server",
 		"client": "cd client && npm start",
-		"dev": "concurrently \"nodemon server\" \"npm run client\""
+		 "dev": "concurrently \"nodemon server\" \"npm run client\""
 	},
 	"author": "Bugnar Catalin",
 	"license": "ISC",
