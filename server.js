@@ -23,6 +23,7 @@ app.use(
 	cors({
 		credentials: true,
 		origin: 'https://yamsonline.netlify.app',
+		exposedHeaders: ['token', 'room'],
 	}),
 );
 app.use(express.json());
