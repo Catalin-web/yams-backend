@@ -19,7 +19,12 @@ const cookieParser = require('cookie-parser');
 //Error handling
 const errorHandler = require('./middleware/error');
 const app = express();
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(
+	cors({
+		credentials: true,
+		origin: 'https://yamsonline.netlify.app',
+	}),
+);
 app.use(express.json());
 app.use(cookieParser());
 const PORT = process.env.PORT || 5000;
