@@ -1,7 +1,7 @@
 /** @format */
 const asyncHandler = require('../middleware/async');
 const Game = require('../models/Game');
-const ErrorResponse = require('../utils/ErrorResponse');
+const ErrorResponse = require('../utils/errorResponse');
 // @desc     Create game
 // @route    POST /api/v1/yams_online/game/create
 // @acces    Create / Private

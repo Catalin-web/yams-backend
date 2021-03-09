@@ -2,7 +2,7 @@
 
 const asyncHandler = require('../middleware/async');
 const User = require('../models/User');
-const ErrorResponse = require('../utils/ErrorResponse');
+const ErrorResponse = require('../utils/errorResponse');
 const crypto = require('crypto');
 /// !!! Send token response !!! ////
 const sendTokenResponse = (user, statusCode, res) => {

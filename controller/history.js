@@ -2,7 +2,7 @@
 const asyncHandler = require('../middleware/async');
 const History = require('../models/History');
 const Game = require('../models/Game');
-const ErrorResponse = require('../utils/ErrorResponse');
+const ErrorResponse = require('../utils/errorResponse');
 const crypto = require('crypto');
 
 // @desc     Create history for current game
