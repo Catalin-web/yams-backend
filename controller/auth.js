@@ -9,7 +9,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 	const token = user.getSignedJwtToken();
 
 	const options = {
-		sameSite: 'none',
+		sameSite: 'strict',
 		path: '/',
 		domain: 'https://yamsonline.netlify.app/',
 		expires: new Date(
