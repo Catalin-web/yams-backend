@@ -172,7 +172,7 @@ io.on('connection', (socket) => {
 ///!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /// Listening on port 5000
 server.listen(
-	'https://yamsonline.netlify.app/',
+	PORT,
 	console.log(
 		`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`
 			.yellow.bold,
