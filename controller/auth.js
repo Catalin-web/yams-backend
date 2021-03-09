@@ -18,9 +18,9 @@ const sendTokenResponse = (user, statusCode, res) => {
 		secure: true,
 		httpOnly: true,
 	};
-	if (process.env.NODE_ENV == 'production') {
-		options.secure = true;
-	}
+	// if (process.env.NODE_ENV == 'production') {
+	// 	options.secure = true;
+	// }
 	user.password = null;
 	res
 		.status(statusCode)
