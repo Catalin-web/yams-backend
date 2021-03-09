@@ -27,6 +27,7 @@ app.use(
 	}),
 );
 app.use(express.json());
+app.enable('trust proxy');
 app.use(cookieParser());
 const PORT = process.env.PORT || 5000;
 const PORT2 = 3000;
