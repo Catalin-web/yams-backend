@@ -39,7 +39,7 @@ app.use('/api/v1/yams_online/history', history);
 app.get('/', (req, res) => {
 	res.status(200).send('Server is up and running');
 });
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 app.use(errorHandler);
 ///SOCKET.IO !!!!!!!!!!!!!!!!!!
 const server = http.createServer(app);

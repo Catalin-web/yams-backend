@@ -9,12 +9,12 @@ const sendTokenResponse = (user, statusCode, res) => {
 	const token = user.getSignedJwtToken();
 
 	const options = {
-		sameSite: 'strict',
+		sameSite: 'none',
 		path: '/',
 		expires: new Date(
 			Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000,
 		),
-		secure: true,
+		// secure: true,
 		httpOnly: true,
 	};
 	// if (process.env.NODE_ENV == 'production') {
