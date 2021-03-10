@@ -23,7 +23,11 @@ const sendTokenResponse = (user, statusCode, res) => {
 	user.password = null;
 	res
 		.status(statusCode)
-		.cookie('token', token, options)
+		.setHeader(
+			'Set-Cookie',
+			`token=${token}; HttpOnly;SameSite=None; Secure`,
+		)
+		// .cookie('token', token, options)
 		.json({ succes: true, data: user });
 };
 /// ///
