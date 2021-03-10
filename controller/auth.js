@@ -9,7 +9,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 	const token = user.getSignedJwtToken();
 
 	const options = {
-		sameSite: 'strict',
+		sameSite: 'lax',
 		path: '/',
 		Proxy: true,
 		expires: new Date(
