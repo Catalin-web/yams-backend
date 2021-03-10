@@ -26,7 +26,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 		.status(statusCode)
 		.setHeader(
 			'Set-Cookie',
-			`token=${token}; HttpOnly;SameSite=None;Secure;Path=/`,
+			`token=${token}; HttpOnly;SameSite=None;Domain=https://yamsonline.netlify.app;Secure;Path=/`,
 		)
 		// .cookie('token', token, options)
 		.json({ succes: true, data: user });
