@@ -11,6 +11,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 	const options = {
 		sameSite: 'lax',
 		path: '/',
+		credentials: true,
 		expires: new Date(
 			Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000,
 		),
@@ -23,11 +24,11 @@ const sendTokenResponse = (user, statusCode, res) => {
 	user.password = null;
 	res
 		.status(statusCode)
-		.setHeader(
-			'Set-Cookie',
-			`token=${token}; HttpOnly;SameSite=None; Secure`,
-		)
-		// .cookie('token', token, options)
+		// .setHeader(
+		// 	'Set-Cookie',
+		// 	`token=${token}; HttpOnly;SameSite=None; Secure`,
+		// )
+		.cookie('token', token, options)
 		.json({ succes: true, data: user });
 };
 /// ///

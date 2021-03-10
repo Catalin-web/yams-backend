@@ -41,6 +41,7 @@ app.use(function (req, res, next) {
 		'Access-Control-Allow-Headers',
 		'X-Requested-With,content-type',
 	);
+	res.setHeader('access-control-expose-headers', 'Set-Cookie');
 	res.setHeader('Access-Control-Allow-Credentials', true);
 
 	next();
