@@ -26,7 +26,7 @@ const sendTokenResponse = (user, statusCode, res) => {
 		.status(statusCode)
 		.setHeader(
 			'Set-Cookie',
-			`token=${token}; HttpOnly;SameSite=Strict;Secure;Path=/`,
+			`token=${token}; HttpOnly;SameSite=None;Secure;Path=/`,
 		)
 		// .cookie('token', token, options)
 		.json({ succes: true, data: user });
