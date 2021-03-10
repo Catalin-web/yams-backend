@@ -27,17 +27,25 @@ app.use(
 		exposedHeaders: ['token', 'room'],
 	}),
 );
+app.use(function (req, res, next) {
+	res.setHeader(
+		'Access-Control-Allow-Origin',
+		'https://yamsonline.netlify.app',
+	);
+	res.setHeader(
+		'Access-Control-Allow-Methods',
+		'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+	);
+	res.setHeader(
+		'Access-Control-Allow-Headers',
+		'X-Requested-With,content-type',
+	);
+	res.setHeader('Access-Control-Allow-Credentials', true);
+
+	next();
+});
 app.use(express.json());
 app.enable('trust proxy');
-// app.use(
-// 	express.session({
-// 		proxy: true,
-// 		cookie: {
-// 			secure: true,
-// 			maxAge: 5184000000, // 2 months
-// 		},
-// 	}),
-// );
 app.use(cookieParser());
 const PORT = process.env.PORT || 5000;
 const PORT2 = 3000;
