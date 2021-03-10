@@ -22,16 +22,16 @@ const app = express();
 app.use(
 	cors({
 		credentials: true,
-		origin: 'https://yamsonline.netlify.app',
-		// origin: 'http://localhost:3000',
+		// origin: 'https://yamsonline.netlify.app',
+		origin: 'http://localhost:3000',
 		exposedHeaders: ['token', 'room'],
 	}),
 );
 app.use(function (req, res, next) {
 	res.setHeader(
 		'Access-Control-Allow-Origin',
-		// 'http://localhost:3000',
-		'https://yamsonline.netlify.app',
+		'http://localhost:3000',
+		// 'https://yamsonline.netlify.app',
 	);
 	res.setHeader(
 		'Access-Control-Allow-Methods',
@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 		'X-Requested-With,content-type',
 	);
 	res.setHeader('access-control-expose-headers', 'Set-Cookie');
-	res.setHeader('Access-Control-Allow-Credentials', true);
+	res.setHeader('Access-Control-Allow-Credentials', 'true');
 
 	next();
 });
